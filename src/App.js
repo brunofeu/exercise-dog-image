@@ -28,6 +28,10 @@ class App extends Component {
       })
   }
 
+  handleClick = () => {
+    this.fetchDog();
+  }
+
   renderDog = () => {
     return (
       <div>
@@ -42,6 +46,7 @@ class App extends Component {
       <main className="App">
        <p> {this.state.loading ? loadingElement : this.renderDog()} </p>
 
+        <button onClick={this.handleClick}>Próximo</button>
       </main>
     );
   }
