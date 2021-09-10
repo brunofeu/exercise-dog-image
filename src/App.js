@@ -14,6 +14,16 @@ class App extends Component {
     return this.fetchDog().message
   }
 
+  shouldComponentUpdate(_nextProps, nextState) {
+    if (nextState.message.includes('terrier')) {
+      alert('Terrier!')
+      return false
+    }
+   return true
+    // return !nextState.message.includes('terrier')
+   
+  }
+
   fetchDog = async () => {
     this.setState(
       { loading: true },
